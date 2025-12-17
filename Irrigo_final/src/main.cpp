@@ -444,8 +444,8 @@ void loop() {
         // Goal: If < 30%, start pulsing until > 70%.
 
         // 1. UPDATE STATE (Memory)
-        if(soilMoist[i] < 30) autoState[i] = true;  // Needs Water (START)
-        if(soilMoist[i] > 70) autoState[i] = false; // Enough Water (STOP)
+        if(soilMoist[i] < 35) autoState[i] = true;  // Needs Water (START)
+        if(soilMoist[i] > 60) autoState[i] = false; // Enough Water (STOP)
 
         // 2. EXECUTE PULSING IF STATE IS ACTIVE
         if(autoState[i]) {
@@ -504,4 +504,5 @@ void loop() {
     lcdPage++;
     if(lcdPage > 5) lcdPage = 0;
   }
+
 }
